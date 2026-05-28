@@ -1,0 +1,6 @@
+{
+  "name": "9ii.xyz",
+  "description": "تصميم وإدارة المواقع الاحترافية بالكامل للغير دون أي عناء تقني - مع دومين، استضافة، ومتابعة سنوية بـ 70 دولار فقط.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
