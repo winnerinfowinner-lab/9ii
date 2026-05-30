@@ -24,7 +24,7 @@ const th = {
     heroBadge: "🚀 تخلص من الصداع التقني - نحن نتكفل بكل شيء عنك",
     heroTitlePart1: "صمّم موقع عملك الفريد والاحترافي",
     heroTitlePart2: "بـ 70$ سنوياً فقط ودون أي عناء تقني!",
-    heroSubtitle: "ننشا لك موقع احترافي بالكامل دون ادنى تدخل منك نحن نتولي كل التفاصيل من حجز دومين وربطة بالاستضافة واعمال التصميم والتعديلات عليها ومتابعة كل ذلك على مدار العام انت فقط استلم رابط موقعك واخبر عملائك به لا شئ اخر",
+    heroSubtitle: "ننشئ لك موقعاً احترافياً بالكامل دون أدنى عناء منك. نحن نتولى كافة التفاصيل من حجز الدومين وربطه بالاستضافة السريعة، وأعمال التصميم والتعديل المستمر طوال العام مجاناً. أنت فقط استلم رابط موقعك الجاهز وانشره لعملائك!",
     ctaPrimary: "جرب المحاكي الفوري بالذكاء الاصطناعي ⚡",
     ctaSecondary: "واتساب مباشر للتحدث معنا",
     // Site Simulator
@@ -515,18 +515,18 @@ export default function App() {
           </div>
 
           {/* Main big headline */}
-          <h1 id="hero-title-header" className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] max-w-4xl mx-auto mb-6">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-100 to-gray-300">
+          <h1 id="hero-title-header" className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.3] sm:leading-[1.15] max-w-4xl mx-auto mb-6">
+            <span className="text-white">
               {th[lang].heroTitlePart1}
             </span>
-            <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-400 to-sky-400 font-extrabold pb-2">
-              {th[lang].heroTitlePart2}
+            <br className="sm:hidden" />
+            <span className="text-emerald-400 font-extrabold pb-2 inline-block mt-3 sm:mt-2">
+              {" "}{th[lang].heroTitlePart2}
             </span>
           </h1>
 
           {/* Subtitle description */}
-          <p id="hero-subtitle-p" className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-10">
+          <p id="hero-subtitle-p" className="text-sm sm:text-lg text-gray-200 max-w-3xl mx-auto leading-relaxed mb-10">
             {th[lang].heroSubtitle}
           </p>
 
@@ -1089,7 +1089,7 @@ export default function App() {
                 <span className="text-xs font-bold text-gray-400 tracking-wider block">
                   {th[lang].annualLabel}
                 </span>
-                <p className="text-3xl sm:text-4xl font-black text-white bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-100 to-gray-300">
+                <p className="text-3xl sm:text-4xl font-black text-white">
                   {th[lang].onlyPrice}
                 </p>
                 <div className="h-[1px] bg-gray-800 my-4" />
