@@ -271,7 +271,7 @@ const iconMap: Record<string, React.ComponentType<any>> = {
 };
 
 export default function App() {
-  const [lang, setLang] = useState<"ar" | "en">("ar");
+  const lang = "ar";
   const [activePreset, setActivePreset] = useState<keyof typeof defaultBlueprints>("restaurant");
   const [bizName, setBizName] = useState("");
   const [bizDesc, setBizDesc] = useState("");
@@ -477,19 +477,8 @@ export default function App() {
             </button>
           )}
 
-          {/* Call-to-actions and Language toggle option */}
+          {/* Call-to-actions */}
           <div id="nav-controls-flex" className="flex items-center gap-4">
-            
-            {/* Elegant Language switcher button */}
-            <button
-              id="language-switcher-btn"
-              onClick={() => setLang(lang === "ar" ? "en" : "ar")}
-              className="px-3.5 py-1.5 rounded-lg border border-gray-700 bg-gray-900/40 text-xs font-bold text-gray-200 hover:border-emerald-500 hover:text-white transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
-            >
-              <Globe className="h-3.5 w-3.5 text-emerald-400" />
-              <span>{lang === "ar" ? "English" : "العربية"}</span>
-            </button>
-
             {/* Glowing Order button */}
             <a
               id="direct-whatsapp-nav-btn"
@@ -1293,7 +1282,7 @@ export default function App() {
                 className="w-full py-4 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-extrabold text-sm flex items-center justify-center gap-2 transition-all shadow-xl shadow-emerald-500/20 cursor-pointer"
               >
                 <Phone className="h-4 w-4 fill-current text-slate-900" />
-                <span>{th[lang].orderSubmit}</span>
+                <span>{th[lang].formSubmit}</span>
               </button>
 
             </form>
