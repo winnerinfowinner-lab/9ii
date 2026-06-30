@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from "motion/react";
 const th = {
   ar: {
     dir: "rtl" as const,
-    siteTitle: "9ii.xyz | تصميم وإدارة المواقع الاحترافية بـ 70$ سنوياً",
+    siteTitle: "9ii.xyz | تصميم وإدارة المواقع الاحترافية بـ 500$ سنوياً",
     navLogo: "9ii.xyz",
     navSlogan: "تصميم وإدارة المواقع بالكامل للغير",
     navHome: "الرئيسية",
@@ -23,7 +23,7 @@ const th = {
     navContact: "احجز موقعك الآن",
     heroBadge: "🚀 تخلص من الصداع التقني - نحن نتكفل بكل شيء عنك",
     heroTitlePart1: "صمّم موقع عملك الفريد والاحترافي",
-    heroTitlePart2: "بـ 70$ سنوياً فقط ودون أي عناء تقني!",
+    heroTitlePart2: "بـ 500$ سنوياً فقط ودون أي عناء تقني!",
     heroSubtitle: "ننشئ لك موقعاً احترافياً بالكامل دون أدنى عناء منك. نحن نتولى كافة التفاصيل من حجز الدومين وربطه بالاستضافة السريعة، وأعمال التصميم والتعديل المستمر طوال العام مجاناً. أنت فقط استلم رابط موقعك الجاهز وانشره لعملائك!",
     ctaPrimary: "جرب المحاكي الفوري بالذكاء الاصطناعي ⚡",
     ctaSecondary: "واتساب مباشر للتحدث معنا",
@@ -46,12 +46,12 @@ const th = {
     // Fallback Info Banner
     fallbackUsedNotice: "💡 تم توليد المسودة بنجاح! إذا كنت ترغب بتعديل الألوان والخطوط والأقسام، تواصل معنا فوراً بالواتساب لنضبطها لك بالكامل.",
     // Guarantee & Pricing
-    pricingHeader: "💎 باقة شاملة ومثالية لكل الأنشطة بـ 70$ سنوياً",
+    pricingHeader: "💎 باقة شاملة ومثالية لكل الأنشطة بـ 500$ سنوياً",
     pricingDesc: "لا نتقاضى أي دفعات مسبقة إلا بعد أن تنجز المسودة ونعرضها عليك على رابط فعلي وتؤكد رضاك التام عنها 100%.",
     guaranteeTitle: "🤝 عـهـد الرضا والضمان الذهـبـي لـدينا",
     guaranteeDesc: "إذا لم تعجبك المسودة ولم تتوائم مع رؤيتك وتوقعاتك، فلك كامل الحق في الانسحاب دون تحمل أي تكلفة. وإذا رغبت بأي تعديل طوال العام نقوم به عن طريق رسالة واتساب مجاناً وبلا لوحات تحكم معقدة.",
     annualLabel: "تكلفة سنوية موحدة وبسيطة",
-    onlyPrice: "70$ سنوياً فقط",
+    onlyPrice: "500$ سنوياً فقط",
     includesListTitle: "تشمل الباقة سنوياً وبدون تكاليف مخفية:",
     includesItem1: "حجز الدومين الاحترافي الخاص بك (مثال: .com أو .net)",
     includesItem2: "استضافة سحابية فائقة السرعة مع حماية وأمان (SSL)",
@@ -60,8 +60,8 @@ const th = {
     // FAQ
     faqHeader: "💬 الأسئلة الأكثر شيوعاً وتكراراً",
     faqSub: "إجابات شافية تفصل بساطة تعاملاتنا وخلوها من التعقيد التقني",
-    faqQ1: "هل السعر 70 دولار حقيقي وماذا يخفي؟",
-    faqA1: "حقيقي وبلا أي شروط ملتوية! 70 دولاراً سنوياً كافية لحجز دومين خاص بك، استضافة موقعك على أحدث خوادم آمنة وسريعة، وتصميم وتفعيل موقعك، وإجراء أي تعديل ترغب به على مدار الـ 365 يوماً دون دفع أي مبالغ إضافية.",
+    faqQ1: "هل السعر 500 دولار حقيقي وماذا يخفي؟",
+    faqA1: "حقيقي وبلا أي شروط ملتوية! 500 دولاراً سنوياً كافية لحجز دومين خاص بك، استضافة موقعك على أحدث خوادم آمنة وسريعة، وتصميم وتفعيل موقعك، وإجراء أي تعديل ترغب به على مدار الـ 365 يوماً دون دفع أي مبالغ إضافية.",
     faqQ2: "ماذا يحدث لو أردت تغيير صور أو تزويد موقعي بفرع جديد؟",
     faqA2: "ببساطة شديدة: ترسل لنا رسالة واتساب قصيرة بالتعديل المطلوب، وسيقوم فريق الدعم الفني بتحديث الموقع لك فوراً وبشكل مجاني تماماً! لن تضطر للدخول في واجهات برمجة صعبة أو تعيين مبرمجين.",
     faqQ3: "لماذا تقدمون هذه الخدمة بهذا السعر التنافسي؟",
@@ -101,7 +101,7 @@ const th = {
   },
   en: {
     dir: "ltr" as const,
-    siteTitle: "9ii.xyz | Premium Professional Web Design for Just $70 Yearly",
+    siteTitle: "9ii.xyz | Premium Professional Web Design for Just $500 Yearly",
     navLogo: "9ii.xyz",
     navSlogan: "Fully Handled Web Solutions",
     navHome: "Home",
@@ -111,7 +111,7 @@ const th = {
     navContact: "Order Right Now",
     heroBadge: "🚀 No Technical Headaches - We Safely Handle Everything For You",
     heroTitlePart1: "Your Custom Stellar Website",
-    heroTitlePart2: "Bespoke & Live for Just $70/Year!",
+    heroTitlePart2: "Bespoke & Live for Just $500/Year!",
     heroSubtitle: "We build a fully professional website for you with zero intervention on your part. We handle all details from custom domain registration, linking it with hosting, design works, adjustments, and monitoring all of that throughout the year. You only receive your website link and tell your customers about it—nothing else.",
     ctaPrimary: "Try Interactive Real-Time Simulator ⚡",
     ctaSecondary: "Chat Directly on WhatsApp",
@@ -134,12 +134,12 @@ const th = {
     // Fallback Info Banner
     fallbackUsedNotice: "💡 Blueprint successfully generated! If you wish to customize colors, fonts, or sections, discuss with us via WhatsApp to fine-tune it perfectly.",
     // Guarantee & Pricing
-    pricingHeader: "💎 Flat All-Inclusive Package for Just $70/Year",
+    pricingHeader: "💎 Flat All-Inclusive Package for Just $500/Year",
     pricingDesc: "We hold zero commitment up front. Work starts right away; you pay only after verifying the final live mockup and expressing 100% satisfaction.",
     guaranteeTitle: "🤝 Our Golden Peace-of-Mind Guarantee",
     guaranteeDesc: "If the first draft does not completely align with your artistic preferences, there is absolute zero obligation. When you need edits down the road, simply text us for free, bypassing complex dashboards.",
     annualLabel: "Simple Flat Annual Rate",
-    onlyPrice: "$70 / Year Flat",
+    onlyPrice: "$500 / Year Flat",
     includesListTitle: "The yearly package fully guarantees:",
     includesItem1: "Custom official domain selection (.com, .net, .org, or similar)",
     includesItem2: "Secure, lightning-fast cloud servers and continuous SSL encryption",
@@ -148,8 +148,8 @@ const th = {
     // FAQ
     faqHeader: "💬 Frequently Asked Questions",
     faqSub: "Straightforward answers clearing out any technical confusion regarding our boutique service",
-    faqQ1: "Is the $70 yearly price real, and what does it include?",
-    faqA1: "Yes, it is strictly real! $70 per year covers your custom official domain registration, secure hosting on top-tier global nodes, tailored UI web design, and continuous free updates for the next 365 days with absolute zero hidden costs.",
+    faqQ1: "Is the $500 yearly price real, and what does it include?",
+    faqA1: "Yes, it is strictly real! $500 per year covers your custom official domain registration, secure hosting on top-tier global nodes, tailored UI web design, and continuous free updates for the next 365 days with absolute zero hidden costs.",
     faqQ2: "What happens if I change my menu, services, or telephone later?",
     faqA2: "It is incredibly simple: drop us a brief WhatsApp message with the details. Our technical team implements the update and launches the live revision for you for free! No dashboard files to touch.",
     faqQ3: "How are you able to offer this at such a competitive price?",
@@ -383,8 +383,8 @@ export default function App() {
       return;
     }
     const txt = lang === "ar" 
-      ? `أهلاً فريق 9ii.xyz، أود حجز موقع احترافي لعملي بـ 70 دولار سنوياً.\nالاسم: ${clientName}\nالهاتف: ${clientPhone}\nالدومين المقترح: ${clientDomain || 'غير محدد'}\nتفاصيل العمل: ${clientNotes || 'لا يوجد ملاحظات إضافية'}`
-      : `Hello 9ii.xyz team, I'd like to reserve a professional website for $70 yearly.\nName: ${clientName}\nPhone: ${clientPhone}\nSuggested Domain: ${clientDomain || 'N/A'}\nDetails: ${clientNotes || 'None'}`;
+      ? `أهلاً فريق 9ii.xyz، أود حجز موقع احترافي لعملي بـ 500 دولار سنوياً.\nالاسم: ${clientName}\nالهاتف: ${clientPhone}\nالدومين المقترح: ${clientDomain || 'غير محدد'}\nتفاصيل العمل: ${clientNotes || 'لا يوجد ملاحظات إضافية'}`
+      : `Hello 9ii.xyz team, I'd like to reserve a professional website for $500 yearly.\nName: ${clientName}\nPhone: ${clientPhone}\nSuggested Domain: ${clientDomain || 'N/A'}\nDetails: ${clientNotes || 'None'}`;
     
     window.open(getWhatsAppLink(txt), "_blank");
   };
@@ -555,7 +555,7 @@ export default function App() {
           {/* Core dynamic value counts */}
           <div id="hero-stat-banners" className="grid grid-cols-2 gap-4 mt-20 max-w-2xl mx-auto text-center border-t border-gray-900 pt-10">
             <div id="stat-card-1" className="p-4 rounded-xl bg-gray-900/30 border border-gray-900/60">
-              <p className="font-display text-2xl sm:text-3xl font-black text-white">$70</p>
+              <p className="font-display text-2xl sm:text-3xl font-black text-white">$500</p>
               <p className="text-xs text-gray-400 mt-1">{lang === "ar" ? "شامل الدومين والاستضافة" : "With Domain & Server"}</p>
             </div>
             <div id="stat-card-2" className="p-4 rounded-xl bg-gray-900/30 border border-gray-900/60">
@@ -716,8 +716,8 @@ export default function App() {
                   id="simulator-whatsapp-buy-btn"
                   href={getWhatsAppLink(
                     lang === "ar" 
-                      ? `أهلاً 9ii.xyz، لقد عاينت نموذج الويب لرواد [${blueprint?.businessName || bizName || 'نشاطنا'}] عبر موقعكم وأود تفعيله بدومين رسمي بـ 70$` 
-                      : `Hello 9ii.xyz, I simulated the preview layout for [${blueprint?.businessName || bizName || 'our business'}] on your website and would love to process it for $70.`
+                      ? `أهلاً 9ii.xyz، لقد عاينت نموذج الويب لرواد [${blueprint?.businessName || bizName || 'نشاطنا'}] عبر موقعكم وأود تفعيله بدومين رسمي بـ 500$` 
+                      : `Hello 9ii.xyz, I simulated the preview layout for [${blueprint?.businessName || bizName || 'our business'}] on your website and would love to process it for $500.`
                   )}
                   target="_blank"
                   rel="noreferrer"
@@ -726,8 +726,8 @@ export default function App() {
                   <Phone className="h-3.5 w-3.5 fill-current" />
                   <span>
                     {lang === "ar" 
-                      ? "احجز موقع عملك الفعلي بـ 70$ سنوياً 🟢" 
-                      : "Claim Your Live Site on Domain for $70/yr 🟢"}
+                      ? "احجز موقع عملك الفعلي بـ 500$ سنوياً 🟢" 
+                      : "Claim Your Live Site on Domain for $500/yr 🟢"}
                   </span>
                 </a>
               </div>
@@ -883,7 +883,7 @@ export default function App() {
                               : "✨ This design is fully maintained, updated, and deployed under 9ii.xyz care."}
                           </p>
                           <span className="text-[9px] uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-extrabold shrink-0">
-                            70$ Package Active
+                            500$ Package Active
                           </span>
                         </div>
                       </motion.div>
@@ -984,8 +984,8 @@ export default function App() {
                           </h3>
                           <p className="text-[11px] text-gray-400 max-w-sm mx-auto">
                             {lang === "ar" 
-                              ? "هذا الموقع جاهز لربطه بدومين خاص بشركتك وتعديله! تواصل معنا واطلبه بـ 70 دولار فقط سنوياً."
-                              : "This design structure can go live in 24 hours under your official custom domain name for just $70!"}
+                              ? "هذا الموقع جاهز لربطه بدومين خاص بشركتك وتعديله! تواصل معنا واطلبه بـ 500 دولار فقط سنوياً."
+                              : "This design structure can go live in 24 hours under your official custom domain name for just $500!"}
                           </p>
                         </div>
 
