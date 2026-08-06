@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import fs from "fs";
 import dotenv from "dotenv";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
@@ -310,6 +311,31 @@ app.post("/api/generate-preview", async (req, res) => {
 });
 
 async function startServer() {
+  // Explicit SEO static routes to guarantee raw file output instead of index.html
+  app.get("/robots.txt", (req, res) => {
+    const publicPath = path.join(process.cwd(), "public", "robots.txt");
+    const distPath = path.join(process.cwd(), "dist", "robots.txt");
+    const targetPath = fs.existsSync(distPath) ? distPath : publicPath;
+    res.type("text/plain");
+    res.sendFile(targetPath);
+  });
+
+  app.get("/sitemap.xml", (req, res) => {
+    const publicPath = path.join(process.cwd(), "public", "sitemap.xml");
+    const distPath = path.join(process.cwd(), "dist", "sitemap.xml");
+    const targetPath = fs.existsSync(distPath) ? distPath : publicPath;
+    res.type("application/xml");
+    res.sendFile(targetPath);
+  });
+
+  app.get("/site.webmanifest", (req, res) => {
+    const publicPath = path.join(process.cwd(), "public", "site.webmanifest");
+    const distPath = path.join(process.cwd(), "dist", "site.webmanifest");
+    const targetPath = fs.existsSync(distPath) ? distPath : publicPath;
+    res.type("application/manifest+json");
+    res.sendFile(targetPath);
+  });
+
   // Serve static assets in production
   if (process.env.NODE_ENV === "production") {
     const distPath = path.join(process.cwd(), "dist");
