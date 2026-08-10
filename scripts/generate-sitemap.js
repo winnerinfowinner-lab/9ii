@@ -8,13 +8,10 @@ const __dirname = path.dirname(__filename);
 // Base URL of the website
 const DOMAIN = 'https://9ii.xyz';
 
-// List of all primary pages & section anchors for search engines
+// Only include valid canonical URLs (NO # anchors allowed in sitemaps)
 const routes = [
-  { path: '/', priority: '1.0', changefreq: 'daily' },
-  { path: '/#generator', priority: '0.9', changefreq: 'weekly' },
-  { path: '/#features', priority: '0.8', changefreq: 'weekly' },
-  { path: '/#faq', priority: '0.8', changefreq: 'monthly' },
-  { path: '/#contact', priority: '0.9', changefreq: 'weekly' }
+  { path: '/', priority: '1.0', changefreq: 'daily' }
+  // إذا قمت بإنشاء صفحات حقيقية مستقبلاً مثل /about أو /privacy أضفها هنا بدون #
 ];
 
 function generateSitemap() {
@@ -31,8 +28,7 @@ function generateSitemap() {
   }).join('\n');
 
   const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${xmlUrls}
 </urlset>`;
 
@@ -43,13 +39,13 @@ ${xmlUrls}
 
   const sitemapPath = path.join(publicDir, 'sitemap.xml');
   fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
-  console.log(`✅ [SEO] sitemap.xml successfully generated at ${sitemapPath}`);
+  console.log(`✅ [SEO] Clean sitemap.xml successfully generated at ${sitemapPath}`);
 
-  // If dist folder exists, copy it directly to dist as well
+  // Copy directly into dist if built
   const distDir = path.resolve(__dirname, '../dist');
   if (fs.existsSync(distDir)) {
     fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapContent, 'utf8');
-    console.log(`✅ [SEO] Copied sitemap.xml directly into dist/`);
+    console.log(`✅ [SEO] Copied clean sitemap.xml directly into dist/`);
   }
 }
 
