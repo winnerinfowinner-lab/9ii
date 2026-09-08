@@ -24,6 +24,9 @@ const th = {
     heroBadge: "🚀 تخلص من الصداع التقني - نحن نتكفل بكل شيء عنك",
     heroTitlePart1: "صمّم موقع عملك الفريد والاحترافي",
     heroTitlePart2: "بـ 500$ سنوياً فقط ودون أي عناء تقني!",
+    nationalDayPromoTitle: "والان و بخصم 50% بمناسبة اليوم الوطني",
+    nationalDayPromoDates: "فى الفترة من 16 الى 26 سبتمبر",
+    nationalDayPromoNote: "اي عميل من اي مكان حول العالم يتواصل معنا خلال تلك الفترة سيحصل على التخفيض",
     heroSubtitle: "ننشئ لك موقعاً احترافياً بالكامل دون أدنى عناء منك. نحن نتولى كافة التفاصيل من حجز الدومين وربطه بالاستضافة السريعة، وأعمال التصميم والتعديل المستمر طوال العام مجاناً. أنت فقط استلم رابط موقعك الجاهز وانشره لعملائك!",
     ctaPrimary: "جرب المحاكي الفوري بالذكاء الاصطناعي ⚡",
     ctaSecondary: "واتساب مباشر للتحدث معنا",
@@ -112,6 +115,9 @@ const th = {
     heroBadge: "🚀 No Technical Headaches - We Safely Handle Everything For You",
     heroTitlePart1: "Your Custom Stellar Website",
     heroTitlePart2: "Bespoke & Live for Just $500/Year!",
+    nationalDayPromoTitle: "Now with a 50% National Day Special Discount!",
+    nationalDayPromoDates: "During the period from September 16 to 26",
+    nationalDayPromoNote: "Any client contacting us from anywhere around the world during this period will receive the discount",
     heroSubtitle: "We build a fully professional website for you with zero intervention on your part. We handle all details from custom domain registration, linking it with hosting, design works, adjustments, and monitoring all of that throughout the year. You only receive your website link and tell your customers about it—nothing else.",
     ctaPrimary: "Try Interactive Real-Time Simulator ⚡",
     ctaSecondary: "Chat Directly on WhatsApp",
@@ -294,8 +300,29 @@ export default function App() {
   // FAQ state
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  // Privacy Policy state
-  const [showPrivacy, setShowPrivacy] = useState(false);
+  // View State: "home" | "privacy"
+  const [currentView, setCurrentView] = useState<"home" | "privacy">("home");
+
+  // Synchronize routing with window hash and URL path
+  useEffect(() => {
+    const handleLocationChange = () => {
+      const hash = window.location.hash.toLowerCase();
+      const path = window.location.pathname.toLowerCase();
+      if (hash === "#privacy" || hash.includes("privacy") || path === "/privacy") {
+        setCurrentView("privacy");
+      } else {
+        setCurrentView("home");
+      }
+    };
+
+    handleLocationChange();
+    window.addEventListener("hashchange", handleLocationChange);
+    window.addEventListener("popstate", handleLocationChange);
+    return () => {
+      window.removeEventListener("hashchange", handleLocationChange);
+      window.removeEventListener("popstate", handleLocationChange);
+    };
+  }, []);
 
   // Auto update simulated website whenever the user switches active sector tab (Only if they haven't run a custom AI generation yet to keep it intuitive)
   useEffect(() => {
@@ -458,34 +485,46 @@ export default function App() {
           </div>
 
           {/* Desktop Navigation links */}
-          {!showPrivacy ? (
-            <nav id="top-nav-desktop-links" className="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-300">
-              <a href="#hero-section" id="link-hero" className="hover:text-emerald-400 transition-colors">{th[lang].navHome}</a>
+          {currentView === "home" ? (
+            <nav id="top-nav-desktop-links" className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold text-gray-300">
+              <button 
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }} 
+                id="link-hero" 
+                className="hover:text-emerald-400 transition-colors text-emerald-400 font-bold cursor-pointer"
+              >
+                {th[lang].navHome}
+              </button>
+
               <a href="#simulator-section" id="link-simulator" className="hover:text-emerald-400 transition-colors">{th[lang].navGenerator}</a>
               <a href="#features-section" id="link-features" className="hover:text-emerald-400 transition-colors">{th[lang].navFeatures}</a>
               <a href="#faq-section" id="link-faq" className="hover:text-emerald-400 transition-colors">{th[lang].navFAQ}</a>
             </nav>
           ) : (
-            <button
-              onClick={() => {
-                setShowPrivacy(false);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              className="text-[#10b981] hover:text-emerald-400 font-extrabold text-sm flex items-center gap-2 cursor-pointer bg-gray-900/40 border border-gray-800 px-4 py-2 rounded-xl transition-all"
-            >
-              <span>{lang === "ar" ? "↩ الرجوع للرئيسية" : "↩ Back to Home"}</span>
-            </button>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => {
+                  setCurrentView("home");
+                  window.location.hash = "";
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="text-[#10b981] hover:text-emerald-400 font-extrabold text-xs sm:text-sm flex items-center gap-2 cursor-pointer bg-gray-900/60 border border-gray-800 px-4 py-2 rounded-xl transition-all"
+              >
+                <span>{lang === "ar" ? "↩ الرجوع للرئيسية" : "↩ Back to Home"}</span>
+              </button>
+            </div>
           )}
 
           {/* Call-to-actions */}
-          <div id="nav-controls-flex" className="flex items-center gap-4">
+          <div id="nav-controls-flex" className="flex items-center gap-3">
             {/* Glowing Order button */}
             <a
               id="direct-whatsapp-nav-btn"
               href={getWhatsAppLink(th[lang].whatsappHello)}
               target="_blank"
               rel="noreferrer"
-              className="hidden lg:flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 font-bold text-slate-900 transition-all duration-300 shadow-lg shadow-emerald-500/20 text-xs text-center"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 font-bold text-slate-900 transition-all duration-300 shadow-lg shadow-emerald-500/20 text-xs text-center"
             >
               <Phone className="h-3.5 w-3.5 fill-current" />
               <span>{th[lang].navContact}</span>
@@ -494,7 +533,7 @@ export default function App() {
         </div>
       </header>
 
-      {!showPrivacy ? (
+      {currentView === "home" ? (
         <>
           {/* METEORIC HERO SECTION */}
           <section id="hero-section" className="relative overflow-hidden pt-12 pb-24 md:pt-20 md:pb-32 flex flex-col items-center">
@@ -525,6 +564,35 @@ export default function App() {
             </span>
           </h1>
 
+          {/* National Day 50% Special Discount Banner - Distinct Font & Contrasting Color */}
+          <div
+            id="national-day-promo-card"
+            className="my-7 py-5 px-5 sm:px-8 max-w-2xl mx-auto rounded-2xl bg-gradient-to-b from-amber-500/15 via-amber-950/30 to-black/50 border-2 border-amber-400/60 glow-gold text-center relative overflow-hidden backdrop-blur-md shadow-2xl"
+          >
+            {/* Ambient gold glow circles */}
+            <div className="absolute -top-12 -left-12 w-36 h-36 bg-amber-400/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute -bottom-12 -right-12 w-36 h-36 bg-yellow-500/20 rounded-full blur-2xl pointer-events-none" />
+
+            <div className="relative z-10 font-promo-banner flex flex-col items-center gap-2">
+              {/* Line 1: Main Announcement */}
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-amber-300 tracking-wide drop-shadow-[0_2px_10px_rgba(245,158,11,0.4)]">
+                {th[lang].nationalDayPromoTitle}
+              </p>
+
+              {/* Line 2: Date period badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-400/20 border border-amber-400/50 text-amber-200 text-sm sm:text-base font-bold shadow-inner my-1">
+                <Sparkle className="h-4 w-4 text-amber-300 animate-pulse" />
+                <span>{th[lang].nationalDayPromoDates}</span>
+                <Sparkle className="h-4 w-4 text-amber-300 animate-pulse" />
+              </div>
+
+              {/* Line 3: Worldwide customer promise */}
+              <p className="text-sm sm:text-base md:text-lg text-amber-100 font-semibold leading-relaxed max-w-xl">
+                {th[lang].nationalDayPromoNote}
+              </p>
+            </div>
+          </div>
+
           {/* Subtitle description */}
           <p id="hero-subtitle-p" className="text-sm sm:text-lg text-gray-200 max-w-3xl mx-auto leading-relaxed mb-10">
             {th[lang].heroSubtitle}
@@ -545,7 +613,7 @@ export default function App() {
               href={getWhatsAppLink(th[lang].whatsappHello)}
               target="_blank"
               rel="noreferrer"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gray-950/90 border border-gray-800 hover:border-gray-700 text-gray-100 font-bold transition-all duration-300 flex items-center justify-center gap-2 hover:bg-gray-900/60"
+              className="w-full sm:w-auto px-7 py-4 rounded-xl bg-gray-950/90 border border-gray-800 hover:border-gray-700 text-gray-100 font-bold transition-all duration-300 flex items-center justify-center gap-2 hover:bg-gray-900/60"
             >
               <Phone className="h-4 w-4 text-emerald-400 fill-current" />
               <span>{th[lang].ctaSecondary}</span>
@@ -1410,7 +1478,8 @@ export default function App() {
             <div className="space-y-4">
               <button
                 onClick={() => {
-                  setShowPrivacy(false);
+                  setCurrentView("home");
+                  window.location.hash = "";
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-900 border border-gray-850 text-xs font-black text-[#10b981] hover:text-emerald-300 hover:border-emerald-500/30 transition-all cursor-pointer"
@@ -1626,7 +1695,8 @@ export default function App() {
             <div className="flex justify-center pt-4">
               <button
                 onClick={() => {
-                  setShowPrivacy(false);
+                  setCurrentView("home");
+                  window.location.hash = "";
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="py-4 px-12 rounded-xl bg-[#10b981] hover:bg-[#059669] text-slate-900 font-extrabold text-base transition-all shadow-xl shadow-emerald-500/20 cursor-pointer"
@@ -1645,11 +1715,27 @@ export default function App() {
           <p className="max-w-md mx-auto text-[11px] text-gray-400">
             {th[lang].rightsReserved}
           </p>
-          <div className="flex items-center gap-4 mt-2">
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-2">
+            <button
+              id="footer-home-btn"
+              onClick={() => {
+                setCurrentView("home");
+                window.location.hash = "";
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="text-gray-400 hover:text-emerald-400 font-medium transition-colors cursor-pointer text-xs"
+            >
+              {th[lang].navHome}
+            </button>
+
             <button
               id="footer-privacy-btn"
-              onClick={() => setShowPrivacy(true)}
-              className="text-[#10b981] hover:text-emerald-400 font-medium transition-colors cursor-pointer text-xs underline decoration-dotted underline-offset-4"
+              onClick={() => {
+                setCurrentView("privacy");
+                window.location.hash = "privacy";
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="text-gray-400 hover:text-emerald-400 font-medium transition-colors cursor-pointer text-xs underline decoration-dotted underline-offset-4"
             >
               {th[lang].privacyLabel}
             </button>

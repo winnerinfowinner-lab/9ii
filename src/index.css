@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Cairo", system-ui, -apple-system, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
+  --font-promo: "Aref Ruqaa", "Amiri", "Playfair Display", serif;
   --color-emerald-400: #10b981;
   --color-emerald-500: #10b981;
   --color-emerald-600: #059669;
@@ -28,6 +29,14 @@ body {
 
 .glow-emerald {
   box-shadow: 0 0 40px -5px rgba(16, 185, 129, 0.2);
+}
+
+.glow-gold {
+  box-shadow: 0 0 40px -5px rgba(245, 158, 11, 0.3), 0 0 15px rgba(234, 179, 8, 0.2);
+}
+
+.font-promo-banner {
+  font-family: "Aref Ruqaa", "Amiri", "Playfair Display", serif;
 }
 
 /* Custom Scrollbar */
