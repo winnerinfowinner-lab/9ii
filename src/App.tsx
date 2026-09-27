@@ -24,9 +24,6 @@ const th = {
     heroBadge: "🚀 تخلص من الصداع التقني - نحن نتكفل بكل شيء عنك",
     heroTitlePart1: "صمّم موقع عملك الفريد والاحترافي",
     heroTitlePart2: "بـ 500$ سنوياً فقط ودون أي عناء تقني!",
-    nationalDayPromoTitle: "والان و بخصم 50% بمناسبة اليوم الوطني",
-    nationalDayPromoDates: "فى الفترة من 16 الى 26 سبتمبر",
-    nationalDayPromoNote: "اي عميل من اي مكان حول العالم يتواصل معنا خلال تلك الفترة سيحصل على التخفيض",
     heroSubtitle: "ننشئ لك موقعاً احترافياً بالكامل دون أدنى عناء منك. نحن نتولى كافة التفاصيل من حجز الدومين وربطه بالاستضافة السريعة، وأعمال التصميم والتعديل المستمر طوال العام مجاناً. أنت فقط استلم رابط موقعك الجاهز وانشره لعملائك!",
     ctaPrimary: "جرب المحاكي الفوري بالذكاء الاصطناعي ⚡",
     ctaSecondary: "واتساب مباشر للتحدث معنا",
@@ -115,9 +112,6 @@ const th = {
     heroBadge: "🚀 No Technical Headaches - We Safely Handle Everything For You",
     heroTitlePart1: "Your Custom Stellar Website",
     heroTitlePart2: "Bespoke & Live for Just $500/Year!",
-    nationalDayPromoTitle: "Now with a 50% National Day Special Discount!",
-    nationalDayPromoDates: "During the period from September 16 to 26",
-    nationalDayPromoNote: "Any client contacting us from anywhere around the world during this period will receive the discount",
     heroSubtitle: "We build a fully professional website for you with zero intervention on your part. We handle all details from custom domain registration, linking it with hosting, design works, adjustments, and monitoring all of that throughout the year. You only receive your website link and tell your customers about it—nothing else.",
     ctaPrimary: "Try Interactive Real-Time Simulator ⚡",
     ctaSecondary: "Chat Directly on WhatsApp",
@@ -563,35 +557,6 @@ export default function App() {
               {" "}{th[lang].heroTitlePart2}
             </span>
           </h1>
-
-          {/* National Day 50% Special Discount Banner - Distinct Font & Contrasting Color */}
-          <div
-            id="national-day-promo-card"
-            className="my-7 py-5 px-5 sm:px-8 max-w-2xl mx-auto rounded-2xl bg-gradient-to-b from-amber-500/15 via-amber-950/30 to-black/50 border-2 border-amber-400/60 glow-gold text-center relative overflow-hidden backdrop-blur-md shadow-2xl"
-          >
-            {/* Ambient gold glow circles */}
-            <div className="absolute -top-12 -left-12 w-36 h-36 bg-amber-400/20 rounded-full blur-2xl pointer-events-none" />
-            <div className="absolute -bottom-12 -right-12 w-36 h-36 bg-yellow-500/20 rounded-full blur-2xl pointer-events-none" />
-
-            <div className="relative z-10 font-promo-banner flex flex-col items-center gap-2">
-              {/* Line 1: Main Announcement */}
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-amber-300 tracking-wide drop-shadow-[0_2px_10px_rgba(245,158,11,0.4)]">
-                {th[lang].nationalDayPromoTitle}
-              </p>
-
-              {/* Line 2: Date period badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-400/20 border border-amber-400/50 text-amber-200 text-sm sm:text-base font-bold shadow-inner my-1">
-                <Sparkle className="h-4 w-4 text-amber-300 animate-pulse" />
-                <span>{th[lang].nationalDayPromoDates}</span>
-                <Sparkle className="h-4 w-4 text-amber-300 animate-pulse" />
-              </div>
-
-              {/* Line 3: Worldwide customer promise */}
-              <p className="text-sm sm:text-base md:text-lg text-amber-100 font-semibold leading-relaxed max-w-xl">
-                {th[lang].nationalDayPromoNote}
-              </p>
-            </div>
-          </div>
 
           {/* Subtitle description */}
           <p id="hero-subtitle-p" className="text-sm sm:text-lg text-gray-200 max-w-3xl mx-auto leading-relaxed mb-10">
